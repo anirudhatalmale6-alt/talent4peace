@@ -43,6 +43,10 @@ nav{position:sticky;top:0;z-index:100;padding:12px 20px;background:var(--white);
 .nav-links a:hover{color:var(--blue);background:rgba(0,32,159,.05)}
 .nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:10px 20px!important;border-radius:100px!important}
 .nav-cta:hover{background:var(--blue-dark)!important}
+.lang-switcher{display:flex;gap:2px;margin-right:6px}
+.lang-btn{background:var(--off-white);border:1px solid var(--light-gray);padding:5px 10px;border-radius:6px;font-size:.7rem;font-weight:700;cursor:pointer;color:var(--text-light);transition:all .2s;letter-spacing:.03em}
+.lang-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.lang-btn:hover:not(.active){background:var(--light-gray)}
 .mobile-menu{display:none;background:none;border:none;color:var(--dark);font-size:1.5rem;cursor:pointer;padding:8px}
 .nav-mobile{position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;opacity:0;pointer-events:none;transition:opacity .3s}
 .nav-mobile.open{opacity:1;pointer-events:auto}
@@ -258,11 +262,21 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
       <a href="#contact">Contact</a>
       <a href="#join" class="nav-cta">Join Talent4Peace</a>
     </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('ht')">KR</button>
+    </div>
     <button class="mobile-menu" onclick="document.querySelector('.nav-mobile').classList.add('open')" aria-label="Menu">&#9776;</button>
   </div>
 </nav>
 <div class="nav-mobile" id="mobileNav">
   <button class="close-menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <div style="display:flex;gap:4px;margin-bottom:12px">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('ht')">KR</button>
+  </div>
   <a href="/" onclick="closeMobile()">Home</a>
   <a href="#categories" onclick="closeMobile()">Categories</a>
   <a href="#find" onclick="closeMobile()">Find Talent</a>
@@ -275,11 +289,11 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-badge">&#11088; A HaitiBiznis Platform</div>
-  <h1>Find Talent. <span class="gold">Book Skills.</span><br>Create <span class="blue">Opportunity.</span></h1>
-  <p class="hero-sub">Talent4Peace connects Haiti's creatives, professionals, and skilled workers to real opportunities.</p>
+  <h1 data-i18n="hero_title">Find Talent. <span class="gold">Book Skills.</span><br>Create <span class="blue">Opportunity.</span></h1>
+  <p class="hero-sub" data-i18n="hero_sub">Talent4Peace connects Haiti's creatives, professionals, and skilled workers to real opportunities.</p>
   <div class="hero-actions">
-    <a href="#find" class="btn btn-blue">Find a Professional</a>
-    <a href="#join" class="btn btn-gold">Join as a Professional</a>
+    <a href="#find" class="btn btn-blue" data-i18n="hero_find">Find a Professional</a>
+    <a href="#join" class="btn btn-gold" data-i18n="hero_join">Join as a Professional</a>
   </div>
 
   <!-- Search -->
@@ -301,9 +315,9 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 
 <!-- CATEGORIES -->
 <section class="categories" id="categories">
-  <div class="section-label reveal">Browse Categories</div>
-  <h2 class="section-title reveal">Find the Right Professional</h2>
-  <p class="section-desc reveal">From creative talent to skilled trades, find verified professionals across Haiti.</p>
+  <div class="section-label reveal" data-i18n="cat_label">Browse Categories</div>
+  <h2 class="section-title reveal" data-i18n="cat_title">Find the Right Professional</h2>
+  <p class="section-desc reveal" data-i18n="cat_desc">From creative talent to skilled trades, find verified professionals across Haiti.</p>
   <div class="cat-grid">
     <div class="cat-card reveal">
       <div class="cat-icon">&#128247;</div>
@@ -370,9 +384,9 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 
 <!-- FEATURED PROFESSIONALS -->
 <section class="featured" id="verified">
-  <div class="section-label reveal">Featured Professionals</div>
-  <h2 class="section-title reveal">Top Verified Talent</h2>
-  <p class="section-desc reveal">Screened, verified, and trusted professionals ready to work.</p>
+  <div class="section-label reveal" data-i18n="feat_label">Featured Professionals</div>
+  <h2 class="section-title reveal" data-i18n="feat_title">Top Verified Talent</h2>
+  <p class="section-desc reveal" data-i18n="feat_desc">Screened, verified, and trusted professionals ready to work.</p>
   <div class="pro-grid">
     <div class="pro-card reveal">
       <div class="pro-avatar">&#128247;</div>
@@ -406,9 +420,9 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
-  <div class="section-label reveal">How It Works</div>
-  <h2 class="section-title reveal">Two Flows, One Platform</h2>
-  <p class="section-desc reveal">Whether you need talent or you are the talent, Talent4Peace works for you.</p>
+  <div class="section-label reveal" data-i18n="how_label">How It Works</div>
+  <h2 class="section-title reveal" data-i18n="how_title">Two Flows, One Platform</h2>
+  <p class="section-desc reveal" data-i18n="how_desc">Whether you need talent or you are the talent, Talent4Peace works for you.</p>
   <div class="how-cols">
     <div class="how-col reveal">
       <h3>For <span class="blue">Clients</span></h3>
@@ -427,9 +441,9 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 
 <!-- WHY TALENT4PEACE -->
 <section class="why">
-  <div class="section-label reveal">Why Talent4Peace</div>
-  <h2 class="section-title reveal">Trust. Quality. Opportunity.</h2>
-  <p class="section-desc reveal">Talent4Peace verifies professionals to ensure safety, quality, and trust.</p>
+  <div class="section-label reveal" data-i18n="why_label">Why Talent4Peace</div>
+  <h2 class="section-title reveal" data-i18n="why_title">Trust. Quality. Opportunity.</h2>
+  <p class="section-desc reveal" data-i18n="why_desc">Talent4Peace verifies professionals to ensure safety, quality, and trust.</p>
   <div class="why-grid">
     <div class="why-item reveal"><div class="why-icon">&#10003;</div><div class="why-title">Verified Professionals</div><div class="why-desc">Every professional goes through credential screening and verification.</div></div>
     <div class="why-item reveal reveal-d1"><div class="why-icon">&#128220;</div><div class="why-title">Credential Screening</div><div class="why-desc">Diplomas, certificates, and professional school records verified.</div></div>
@@ -442,11 +456,11 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 
 <!-- JOIN CTA -->
 <section class="join-cta" id="join">
-  <h2>Turn Your Skill<br>Into Opportunity</h2>
-  <p>Join Talent4Peace as a verified professional and connect with clients who need your skills across Haiti.</p>
+  <h2 data-i18n="join_title">Turn Your Skill<br>Into Opportunity</h2>
+  <p data-i18n="join_desc">Join Talent4Peace as a verified professional and connect with clients who need your skills across Haiti.</p>
   <div class="cta-btns">
-    <a href="#" class="btn btn-white">Join Talent4Peace</a>
-    <a href="https://haitibiznis.com" class="btn btn-ghost">Back to HaitiBiznis</a>
+    <a href="#" class="btn btn-white" data-i18n="join_btn">Join Talent4Peace</a>
+    <a href="https://haitibiznis.com" class="btn btn-ghost" data-i18n="join_back">Back to HaitiBiznis</a>
   </div>
 </section>
 
@@ -484,6 +498,68 @@ const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.t
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+
+/* ═══ TRANSLATION ═══ */
+const translations={
+  en:{
+    hero_title:'Find Talent. <span class="gold">Book Skills.</span><br>Create <span class="blue">Opportunity.</span>',
+    hero_sub:'Talent4Peace connects Haiti\'s creatives, professionals, and skilled workers to real opportunities.',
+    hero_find:'Find a Professional',hero_join:'Join as a Professional',
+    cat_label:'Browse Categories',cat_title:'Find the Right Professional',
+    cat_desc:'From creative talent to skilled trades, find verified professionals across Haiti.',
+    feat_label:'Featured Professionals',feat_title:'Top Verified Talent',
+    feat_desc:'Screened, verified, and trusted professionals ready to work.',
+    how_label:'How It Works',how_title:'Two Flows, One Platform',
+    how_desc:'Whether you need talent or you are the talent, Talent4Peace works for you.',
+    why_label:'Why Talent4Peace',why_title:'Trust. Quality. Opportunity.',
+    why_desc:'Talent4Peace verifies professionals to ensure safety, quality, and trust.',
+    join_title:'Turn Your Skill<br>Into Opportunity',
+    join_desc:'Join Talent4Peace as a verified professional and connect with clients who need your skills across Haiti.',
+    join_btn:'Join Talent4Peace',join_back:'Back to HaitiBiznis'
+  },
+  fr:{
+    hero_title:'Trouvez des Talents. <span class="gold">R\u00e9servez.</span><br>Cr\u00e9ez des <span class="blue">Opportunit\u00e9s.</span>',
+    hero_sub:'Talent4Peace connecte les cr\u00e9atifs, professionnels et travailleurs qualifi\u00e9s d\'Ha\u00efti \u00e0 de vraies opportunit\u00e9s.',
+    hero_find:'Trouver un Professionnel',hero_join:'Rejoindre comme Professionnel',
+    cat_label:'Parcourir les Cat\u00e9gories',cat_title:'Trouvez le Bon Professionnel',
+    cat_desc:'Des talents cr\u00e9atifs aux m\u00e9tiers sp\u00e9cialis\u00e9s, trouvez des professionnels v\u00e9rifi\u00e9s \u00e0 travers Ha\u00efti.',
+    feat_label:'Professionnels en Vedette',feat_title:'Talents V\u00e9rifi\u00e9s',
+    feat_desc:'Professionnels s\u00e9lectionn\u00e9s, v\u00e9rifi\u00e9s et de confiance, pr\u00eats \u00e0 travailler.',
+    how_label:'Comment \u00c7a Marche',how_title:'Deux Parcours, Une Plateforme',
+    how_desc:'Que vous ayez besoin de talent ou que vous soyez le talent, Talent4Peace fonctionne pour vous.',
+    why_label:'Pourquoi Talent4Peace',why_title:'Confiance. Qualit\u00e9. Opportunit\u00e9.',
+    why_desc:'Talent4Peace v\u00e9rifie les professionnels pour assurer la s\u00e9curit\u00e9, la qualit\u00e9 et la confiance.',
+    join_title:'Transformez Votre Comp\u00e9tence<br>en Opportunit\u00e9',
+    join_desc:'Rejoignez Talent4Peace en tant que professionnel v\u00e9rifi\u00e9 et connectez-vous avec des clients qui ont besoin de vos comp\u00e9tences.',
+    join_btn:'Rejoindre Talent4Peace',join_back:'Retour \u00e0 HaitiBiznis'
+  },
+  ht:{
+    hero_title:'Jwenn Talan. <span class="gold">Rezève Konpetans.</span><br>Kreye <span class="blue">Op\u00f2tinite.</span>',
+    hero_sub:'Talent4Peace konekte kreyatif, pwofesyon\u00e8l ak travay\u00e8 kalifye Ayiti ak vr\u00e8 op\u00f2tinite.',
+    hero_find:'Jwenn yon Pwofesyon\u00e8l',hero_join:'Enskri k\u00f2m Pwofesyon\u00e8l',
+    cat_label:'Parcourir Kategori yo',cat_title:'Jwenn Bon Pwofesyon\u00e8l la',
+    cat_desc:'Soti nan talan kreyatif rive nan metye espesyalize, jwenn pwofesyon\u00e8l verifye nan tout Ayiti.',
+    feat_label:'Pwofesyon\u00e8l an Vedette',feat_title:'Talan Verifye',
+    feat_desc:'Pwofesyon\u00e8l ki seleksyone, verifye epi ki gen konfyans, ki pr\u00e8 pou travay.',
+    how_label:'Kijan Sa Mache',how_title:'De Chemen, Yon S\u00e8l Platf\u00f2m',
+    how_desc:'Kit ou bezwen talan oswa ou se talan an, Talent4Peace travay pou ou.',
+    why_label:'Poukisa Talent4Peace',why_title:'Konfyans. Kalite. Op\u00f2tinite.',
+    why_desc:'Talent4Peace verifye pwofesyon\u00e8l yo pou asire sekirite, kalite ak konfyans.',
+    join_title:'Transfome Konpetans Ou<br>an Op\u00f2tinite',
+    join_desc:'Rejwenn Talent4Peace k\u00f2m yon pwofesyon\u00e8l verifye epi konekte ak kliyan ki bezwen konpetans ou nan tout Ayiti.',
+    join_btn:'Rejwenn Talent4Peace',join_back:'Retounen nan HaitiBiznis'
+  }
+};
+let currentLang='en';
+function setLang(lang){
+  currentLang=lang;localStorage.setItem('t4p_lang',lang);
+  document.documentElement.lang=lang==='ht'?'ht':lang==='fr'?'fr':'en';
+  document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.toggle('active',b.textContent===(lang==='en'?'EN':lang==='fr'?'FR':'KR'))});
+  const t=translations[lang]||translations.en;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t[k])el.innerHTML=t[k]});
+}
+const savedLang=localStorage.getItem('t4p_lang');
+if(savedLang&&savedLang!=='en')setLang(savedLang);
 </script>
 </body>
 </html>
