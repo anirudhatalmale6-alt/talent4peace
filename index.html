@@ -263,6 +263,7 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
   <a onclick="setLang('fr')" class="active">&#127467;&#127479; Fran&ccedil;ais</a>
   <a onclick="setLang('en')">&#127468;&#127463; English</a>
   <a onclick="setLang('ht')">&#127469;&#127481; Krey&ograve;l</a>
+  <a onclick="setLang('es')">&#127466;&#127480; Espa&ntilde;ol</a>
 </div>
 
 <div class="flag-stripe" style="margin-top:32px"></div>
@@ -557,12 +558,28 @@ const translations={
     join_title:'Transfome Konpetans Ou<br>an Op\u00f2tinite',
     join_desc:'Rejwenn Talent4Peace k\u00f2m yon pwofesyon\u00e8l verifye epi konekte ak kliyan ki bezwen konpetans ou nan tout Ayiti.',
     join_btn:'Rejwenn Talent4Peace',join_back:'Retounen nan HaitiBiznis'
+  },
+  es:{
+    hero_title:'Encuentra Talento. <span class="gold">Reserva Habilidades.</span><br>Crea <span class="blue">Oportunidad.</span>',
+    hero_sub:'Talent4Peace conecta a los creativos, profesionales y trabajadores calificados de Hait\u00ed con oportunidades reales.',
+    hero_find:'Encontrar un Profesional',hero_join:'Unirse como Profesional',
+    cat_label:'Explorar Categor\u00edas',cat_title:'Encuentra al Profesional Correcto',
+    cat_desc:'Desde talento creativo hasta oficios especializados, encuentra profesionales verificados en todo Hait\u00ed.',
+    feat_label:'Profesionales Destacados',feat_title:'Talento Verificado',
+    feat_desc:'Profesionales seleccionados, verificados y de confianza, listos para trabajar.',
+    how_label:'C\u00f3mo Funciona',how_title:'Dos Caminos, Una Plataforma',
+    how_desc:'Ya sea que necesites talento o seas el talento, Talent4Peace funciona para ti.',
+    why_label:'Por Qu\u00e9 Talent4Peace',why_title:'Confianza. Calidad. Oportunidad.',
+    why_desc:'Talent4Peace verifica a los profesionales para garantizar seguridad, calidad y confianza.',
+    join_title:'Convierte Tu Habilidad<br>en Oportunidad',
+    join_desc:'\u00danete a Talent4Peace como profesional verificado y con\u00e9ctate con clientes que necesitan tus habilidades en todo Hait\u00ed.',
+    join_btn:'Unirse a Talent4Peace',join_back:'Volver a HaitiBiznis'
   }
 };
 let currentLang='en';
 function setLang(lang){
   currentLang=lang;localStorage.setItem('t4p_lang',lang);
-  document.documentElement.lang=lang==='ht'?'ht':lang==='fr'?'fr':'en';
+  document.documentElement.lang=lang;
   document.querySelectorAll('.top-lang-bar a').forEach(a=>{
     const l=a.getAttribute('onclick');
     a.classList.toggle('active',l&&l.indexOf("'"+lang+"'")>-1);
