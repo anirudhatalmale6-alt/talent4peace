@@ -1,0 +1,17 @@
+{
+  "name": "Talent4Peace",
+  "short_name": "Talent4Peace",
+  "description": "Haiti's first verified talent and professional skills marketplace",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#00209F",
+  "theme_color": "#00209F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
