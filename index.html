@@ -39,9 +39,10 @@ a{text-decoration:none}
 /* ═══ NAV ═══ */
 nav{position:sticky;top:32px;z-index:100;padding:12px 20px;background:var(--white);border-bottom:1px solid var(--light-gray);box-shadow:0 1px 8px rgba(0,0,0,.04)}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:var(--display);font-size:1.3rem;color:var(--dark)}
+.nav-logo{font-family:var(--display);font-size:1.3rem;color:var(--dark);display:flex;align-items:center;gap:10px}
+.nav-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover}
 .nav-logo em{color:var(--gold);font-style:italic}
-.nav-logo a{color:inherit}
+.nav-logo a{color:inherit;display:flex;align-items:center;gap:10px}
 .nav-links{display:flex;align-items:center;gap:4px}
 .nav-links a{color:var(--text-light);font-size:.8rem;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .3s}
 .nav-links a:hover{color:var(--blue);background:rgba(0,32,159,.05)}
@@ -271,7 +272,7 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo"><a href="/">Talent4<em>Peace</em></a></div>
+    <div class="nav-logo"><a href="/"><img src="assets/talent4peace-logo.jpg" alt="Talent4Peace Logo">Talent4<em>Peace</em></a></div>
     <div class="nav-links">
       <a href="/">Home</a>
       <a href="#categories">Categories</a>
@@ -298,6 +299,7 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 
 <!-- HERO -->
 <section class="hero">
+  <img src="assets/talent4peace-logo.jpg" alt="Talent4Peace" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,.1)">
   <div class="hero-badge">&#11088; A HaitiBiznis Platform</div>
   <h1 data-i18n="hero_title">Find Talent. <span class="gold">Book Skills.</span><br>Create <span class="blue">Opportunity.</span></h1>
   <p class="hero-sub" data-i18n="hero_sub">Talent4Peace connects Haiti's creatives, professionals, and skilled workers to real opportunities.</p>
