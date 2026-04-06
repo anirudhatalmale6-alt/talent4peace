@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABA - Asosyasyon Blogè Ayisyen | Talent4Peace</title>
+<meta name="description" content="ABA is the official network of Haitian bloggers, creators, and digital media voices inside the Talent4Peace ecosystem.">
+<meta property="og:title" content="ABA - Asosyasyon Blogè Ayisyen">
+<meta property="og:description" content="The Voice of Haitian Bloggers and Digital Creators. Join the national network for visibility, opportunities, and impact.">
+<meta property="og:url" content="https://talent4peace.com/aba.html">
+<meta property="og:image" content="https://talent4peace.com/assets/aba-logo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#00209F;--blue-light:#1A4FD4;--blue-dark:#001566;
+  --red:#D21034;--red-dark:#B00D2C;
+  --gold:#D4A017;--gold-light:#E8B82E;
+  --white:#FFFFFF;--off-white:#F5F7FA;--light-gray:#E8ECF2;
+  --dark:#0C1B3A;--text:#1A2A4A;--text-light:#5A6B8A;
+  --body:'Plus Jakarta Sans',system-ui,sans-serif;
+  --display:'DM Serif Display',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--off-white);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* ═══ TOP LANG BAR ═══ */
+.top-lang-bar{
+  background:var(--blue);color:#fff;font-size:.7rem;
+  padding:5px 20px;display:flex;align-items:center;justify-content:center;gap:4px;
+  position:fixed;top:0;left:0;right:0;z-index:1001;height:32px;
+}
+.top-lang-bar a{
+  color:#fff;background:rgba(255,255,255,.15);padding:3px 10px;border-radius:100px;
+  font-size:.68rem;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.top-lang-bar a:hover{background:rgba(255,255,255,.3)}
+.top-lang-bar a.active{background:#fff;color:var(--blue)}
+
+/* ═══ NAV ═══ */
+nav{position:sticky;top:32px;z-index:100;padding:12px 20px;background:var(--white);border-bottom:1px solid var(--light-gray);box-shadow:0 1px 8px rgba(0,0,0,.04)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.1rem;color:var(--dark)}
+.nav-logo img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.nav-logo em{color:var(--gold);font-style:italic}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--text-light);font-size:.78rem;font-weight:600;padding:8px 10px;border-radius:8px;transition:all .3s}
+.nav-links a:hover{color:var(--blue);background:rgba(0,32,159,.05)}
+.nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:10px 18px!important;border-radius:100px!important}
+.nav-cta:hover{background:var(--blue-dark)!important}
+.mobile-menu{display:none;background:none;border:none;color:var(--dark);font-size:1.5rem;cursor:pointer;padding:8px}
+.nav-mobile{position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;opacity:0;pointer-events:none;transition:opacity .3s}
+.nav-mobile.open{opacity:1;pointer-events:auto}
+.nav-mobile a{color:var(--dark);font-size:1.1rem;font-weight:600;padding:12px 24px}
+.nav-mobile .close-menu{position:absolute;top:18px;right:22px;background:none;border:none;color:var(--dark);font-size:2rem;cursor:pointer}
+
+/* ═══ HERO ═══ */
+.hero{
+  padding:80px 20px 60px;text-align:center;
+  background:linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, #1A3A8A 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="60" r="1.5" fill="rgba(255,255,255,0.04)"/><circle cx="150" cy="30" r="1" fill="rgba(255,255,255,0.06)"/><circle cx="40" cy="140" r="1.2" fill="rgba(255,255,255,0.04)"/><circle cx="170" cy="160" r="1" fill="rgba(255,255,255,0.05)"/></svg>');pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:60px;background:var(--off-white);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-logo{width:140px;height:140px;border-radius:50%;object-fit:cover;margin-bottom:20px;box-shadow:0 8px 40px rgba(0,0,0,.3);border:3px solid rgba(255,255,255,.2)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(212,160,23,.2);border:1px solid rgba(212,160,23,.3);padding:6px 16px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.hero h1{font-family:var(--display);font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin-bottom:16px}
+.hero h1 .gold{color:var(--gold-light)}
+.hero-sub{font-size:clamp(.88rem,1.5vw,1.05rem);max-width:580px;margin:0 auto 30px;line-height:1.65;opacity:.9}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;font-size:.88rem;font-weight:700;transition:all .3s;border:2px solid transparent;cursor:pointer;font-family:var(--body)}
+.btn-gold{background:var(--gold);color:#fff;border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,160,23,.3)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-blue:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,32,159,.3)}
+.btn-white{background:#fff;color:var(--blue);border-color:#fff}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+
+/* ═══ SECTIONS ═══ */
+section{padding:60px 20px}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-tag{display:inline-block;background:rgba(0,32,159,.06);color:var(--blue);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:12px}
+.section-tag-gold{background:rgba(212,160,23,.1);color:var(--gold)}
+.section-title{font-family:var(--display);font-size:clamp(1.5rem,3vw,2.2rem);color:var(--dark);margin-bottom:12px}
+.section-sub{color:var(--text-light);max-width:550px;line-height:1.65;font-size:.92rem}
+
+/* ═══ ABOUT ═══ */
+.about-content{background:var(--white);border-radius:16px;padding:32px 28px;border:1px solid rgba(0,0,0,.05);box-shadow:0 2px 16px rgba(0,0,0,.04);line-height:1.75;font-size:.92rem;color:var(--text);max-width:700px}
+.about-content strong{color:var(--dark)}
+
+/* ═══ CARD GRID ═══ */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:24px}
+.card{background:var(--white);border-radius:14px;padding:24px 20px;border:1px solid rgba(0,0,0,.05);box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.08)}
+.card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:12px}
+.icon-blue{background:rgba(0,32,159,.07)}
+.icon-gold{background:rgba(212,160,23,.1)}
+.icon-red{background:rgba(210,16,52,.06)}
+.card h3{font-size:.95rem;font-weight:700;margin-bottom:6px;color:var(--dark)}
+.card p{font-size:.82rem;color:var(--text-light);line-height:1.6}
+
+/* ═══ POWERS ═══ */
+.powers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px}
+.power-card{background:var(--white);border-radius:14px;padding:20px;text-align:center;border:1px solid rgba(0,0,0,.05);box-shadow:0 2px 10px rgba(0,0,0,.03);transition:transform .3s}
+.power-card:hover{transform:translateY(-3px)}
+.power-card img{width:50px;height:50px;border-radius:10px;object-fit:cover;margin-bottom:10px}
+.power-card h4{font-size:.88rem;font-weight:700;color:var(--dark);margin-bottom:4px}
+.power-card p{font-size:.75rem;color:var(--text-light);line-height:1.5}
+
+/* ═══ FORM ═══ */
+.form-card{background:var(--white);border-radius:16px;padding:32px 28px;border:1px solid rgba(0,0,0,.05);box-shadow:0 2px 16px rgba(0,0,0,.04);max-width:600px;margin:24px auto 0}
+.form-card input,.form-card textarea,.form-card select{width:100%;padding:12px 16px;border:1px solid var(--light-gray);border-radius:10px;font-family:var(--body);font-size:.88rem;margin-bottom:12px;transition:border-color .3s}
+.form-card input:focus,.form-card textarea:focus,.form-card select:focus{outline:none;border-color:var(--blue)}
+.form-card textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* ═══ PARTNER SECTION ═══ */
+.partner-box{background:linear-gradient(135deg, rgba(212,160,23,.08) 0%, rgba(0,32,159,.06) 100%);border:1px solid rgba(212,160,23,.15);border-radius:16px;padding:32px 28px;text-align:center;max-width:600px;margin:24px auto 0}
+
+/* ═══ CTA SECTION ═══ */
+.cta-section{background:linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);color:#fff;text-align:center;border-radius:20px;margin:0 20px;padding:50px 24px}
+.cta-section h2{font-family:var(--display);font-size:clamp(1.4rem,3vw,2rem);margin-bottom:12px}
+.cta-section p{opacity:.9;max-width:500px;margin:0 auto 24px;font-size:.92rem;line-height:1.6}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--dark);color:#ccc;padding:40px 20px 20px;font-size:.8rem}
+footer a{color:#fff;font-weight:600}
+.footer-inner{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;margin-bottom:30px}
+.footer-col h4{color:#fff;font-size:.85rem;margin-bottom:10px}
+.footer-col a{display:block;color:#aaa;font-weight:400;padding:3px 0;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;text-align:center;opacity:.6}
+
+/* ═══ ECOSYSTEM BAR ═══ */
+.eco-bar{background:var(--dark);padding:14px 20px;text-align:center}
+.eco-bar a{color:rgba(255,255,255,.5);font-size:.72rem;font-weight:600;margin:0 8px;transition:color .2s}
+.eco-bar a:hover{color:#fff}
+.eco-bar span{color:rgba(255,255,255,.3);font-size:.65rem}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-menu{display:block}
+  .hero{padding:70px 20px 50px}
+  .form-row{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP LANGUAGE BAR -->
+<div class="top-lang-bar">
+  <a onclick="setLang('fr')" class="active" id="lang-fr">&#127467;&#127479; Francais</a>
+  <a onclick="setLang('en')" id="lang-en">&#127468;&#127463; English</a>
+  <a onclick="setLang('ht')" id="lang-ht">&#127469;&#127481; Kreyol</a>
+  <a onclick="setLang('es')" id="lang-es">&#127466;&#127480; Espanol</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="assets/aba-logo.jpg" alt="ABA Logo">
+      <a href="/">Talent4<em>Peace</em></a> / <span style="color:var(--gold);font-weight:700;font-size:.9rem;">ABA</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#join-types" data-i18n="nav_who">Who Can Join</a>
+      <a href="#benefits" data-i18n="nav_benefits">Benefits</a>
+      <a href="#powers" data-i18n="nav_powers">What ABA Powers</a>
+      <a href="#apply" class="nav-cta" data-i18n="nav_apply">Join ABA</a>
+    </div>
+    <button class="mobile-menu" onclick="document.querySelector('.nav-mobile').classList.add('open')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <button class="close-menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="#about" onclick="closeMobile()" data-i18n="nav_about">About</a>
+  <a href="#join-types" onclick="closeMobile()" data-i18n="nav_who">Who Can Join</a>
+  <a href="#benefits" onclick="closeMobile()" data-i18n="nav_benefits">Benefits</a>
+  <a href="#powers" onclick="closeMobile()" data-i18n="nav_powers">What ABA Powers</a>
+  <a href="#partner" onclick="closeMobile()" data-i18n="nav_partner">Partnership</a>
+  <a href="#apply" onclick="closeMobile()" style="background:var(--blue);color:#fff;border-radius:100px;padding:12px 28px" data-i18n="nav_apply">Join ABA</a>
+</div>
+
+<!-- SECTION 1: HERO -->
+<section class="hero">
+  <img src="assets/aba-logo.jpg" alt="ABA - Asosyasyon Blogè Ayisyen" class="hero-logo">
+  <div class="hero-badge">&#127897; Talent4Peace Network</div>
+  <h1 data-i18n="hero_title">The Voice of Haitian <span class="gold">Bloggers</span><br>and Digital Creators</h1>
+  <p class="hero-sub" data-i18n="hero_sub">A national network helping bloggers, media voices, and digital creators gain visibility, opportunities, structure, and impact through the HaitiBiznis ecosystem.</p>
+  <div class="hero-actions">
+    <a href="#apply" class="btn btn-gold" data-i18n="hero_join">Join ABA</a>
+    <a href="#partner" class="btn btn-ghost" data-i18n="hero_partner">Partner With ABA</a>
+  </div>
+</section>
+
+<!-- SECTION 2: ABOUT ABA -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-tag-gold section-tag" data-i18n="about_tag">About ABA</div>
+    <h2 class="section-title" data-i18n="about_title">Asosyasyon Blogè Ayisyen</h2>
+    <div class="about-content">
+      <p data-i18n="about_p1"><strong>ABA (Asosyasyon Blogè Ayisyen)</strong> is the official network of Haitian bloggers, content creators, and digital media voices operating inside the <strong>Talent4Peace</strong> ecosystem. Founded to unite, empower, and amplify Haiti's digital storytellers, ABA provides structure, visibility, and real opportunities to creators who are shaping the narrative of Haiti.</p>
+      <br>
+      <p data-i18n="about_p2">Whether you are a blogger covering local news, a YouTuber showcasing Haitian culture, an influencer driving community engagement, or a media team covering events - ABA gives you a platform, a network, and a voice that matters. As part of the <strong>HaitiBiznis</strong> ecosystem, ABA members gain access to the full suite of tools, audiences, and partnerships across all connected platforms.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: WHO CAN JOIN -->
+<section id="join-types" style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-tag" data-i18n="who_tag">Who Can Join</div>
+    <h2 class="section-title" data-i18n="who_title">A Network for Every Digital Voice</h2>
+    <p class="section-sub" data-i18n="who_sub">ABA welcomes all forms of digital creation and media expression.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon icon-blue">&#9997;</div>
+        <h3 data-i18n="w1_title">Bloggers</h3>
+        <p data-i18n="w1_desc">Writers covering news, culture, lifestyle, politics, tech, and everything Haiti.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-gold">&#127909;</div>
+        <h3 data-i18n="w2_title">Content Creators</h3>
+        <p data-i18n="w2_desc">YouTubers, TikTokers, podcasters, and video producers creating original content.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-blue">&#127908;</div>
+        <h3 data-i18n="w3_title">Media Personalities</h3>
+        <p data-i18n="w3_desc">Radio hosts, TV commentators, journalists, and public figures with a digital presence.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-red">&#127910;</div>
+        <h3 data-i18n="w4_title">Event Coverage Teams</h3>
+        <p data-i18n="w4_desc">Photographers, videographers, and live streamers covering events and festivals.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-gold">&#11088;</div>
+        <h3 data-i18n="w5_title">Influencers</h3>
+        <p data-i18n="w5_desc">Social media influencers with engaged audiences promoting brands and causes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-blue">&#128161;</div>
+        <h3 data-i18n="w6_title">Youth Digital Voices</h3>
+        <p data-i18n="w6_desc">Young creators and students using digital platforms to express ideas and build skills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: MEMBER BENEFITS -->
+<section id="benefits">
+  <div class="section-inner">
+    <div class="section-tag-gold section-tag" data-i18n="ben_tag">Member Benefits</div>
+    <h2 class="section-title" data-i18n="ben_title">Why Join ABA?</h2>
+    <p class="section-sub" data-i18n="ben_sub">Real tools, real exposure, and real opportunities for Haitian creators.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon icon-gold">&#128065;</div>
+        <h3 data-i18n="b1_title">Greater Visibility</h3>
+        <p data-i18n="b1_desc">Get featured across the HaitiBiznis ecosystem reaching thousands of users in Haiti and the diaspora.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-blue">&#129309;</div>
+        <h3 data-i18n="b2_title">Collaborations</h3>
+        <p data-i18n="b2_desc">Connect with fellow creators, brands, and organizations for partnerships and joint projects.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-red">&#127897;</div>
+        <h3 data-i18n="b3_title">Media Access</h3>
+        <p data-i18n="b3_desc">Get press passes, early event access, and exclusive coverage opportunities through BoxeToBoxe and more.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-blue">&#127891;</div>
+        <h3 data-i18n="b4_title">Training</h3>
+        <p data-i18n="b4_desc">Workshops on content creation, SEO, social media strategy, branding, and digital marketing.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-gold">&#128176;</div>
+        <h3 data-i18n="b5_title">Monetization Opportunities</h3>
+        <p data-i18n="b5_desc">Earn through sponsored content, brand deals, event coverage, and ecosystem partnerships.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon icon-blue">&#127760;</div>
+        <h3 data-i18n="b6_title">Community Support</h3>
+        <p data-i18n="b6_desc">Join a community of like-minded creators who support, inspire, and uplift each other.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: WHAT ABA POWERS -->
+<section id="powers" style="background:var(--white)">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-tag" data-i18n="pow_tag">What ABA Powers</div>
+    <h2 class="section-title" data-i18n="pow_title">Fueling the Ecosystem</h2>
+    <p class="section-sub" style="margin:0 auto 10px" data-i18n="pow_sub">ABA creators drive visibility, content, and engagement across every HaitiBiznis platform.</p>
+    <div class="powers-grid">
+      <div class="power-card">
+        <img src="assets/talent4peace-logo.jpg" alt="Talent4Peace">
+        <h4>Talent4Peace</h4>
+        <p data-i18n="pow_t4p">Creators showcase their skills and get booked for events, media, and professional gigs.</p>
+      </div>
+      <div class="power-card">
+        <img src="/assets/talent4peace-logo.jpg" alt="MyPlopPlop" style="border-radius:10px" onerror="this.style.display='none'">
+        <h4>MyPlopPlop</h4>
+        <p data-i18n="pow_plop">Bloggers review products, promote local businesses, and drive marketplace traffic.</p>
+      </div>
+      <div class="power-card">
+        <img src="/assets/talent4peace-logo.jpg" alt="MsouWout" style="border-radius:10px" onerror="this.style.display='none'">
+        <h4>MsouWout</h4>
+        <p data-i18n="pow_sou">Content creators cover ride experiences and help grow the mobility platform's reach.</p>
+      </div>
+      <div class="power-card">
+        <img src="/assets/talent4peace-logo.jpg" alt="48HoursReady" style="border-radius:10px" onerror="this.style.display='none'">
+        <h4>48HoursReady</h4>
+        <p data-i18n="pow_48">Bloggers share entrepreneur stories and promote business growth resources.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: JOIN ABA FORM -->
+<section id="apply">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-tag-gold section-tag" data-i18n="form_tag">Apply Now</div>
+    <h2 class="section-title" data-i18n="form_title">Join ABA</h2>
+    <p class="section-sub" style="margin:0 auto" data-i18n="form_sub">Fill out the form below to apply for membership in the Asosyasyon Blogè Ayisyen.</p>
+    <form class="form-card" action="https://formsubmit.co/hello@haitibiznis.com" method="POST">
+      <input type="hidden" name="_subject" value="ABA - New Member Application">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="form-row">
+        <input type="text" name="fullname" placeholder="Full Name" data-i18n-placeholder="f_name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="f_phone" required>
+      </div>
+      <div class="form-row">
+        <input type="email" name="email" placeholder="Email Address" data-i18n-placeholder="f_email" required>
+        <input type="text" name="social" placeholder="Social Media Handle (@)" data-i18n-placeholder="f_social">
+      </div>
+      <div class="form-row">
+        <input type="text" name="city" placeholder="City / Location" data-i18n-placeholder="f_city">
+        <select name="creator_type">
+          <option value="" disabled selected data-i18n="f_type">Type of Creator</option>
+          <option value="Blogger">Blogger</option>
+          <option value="Content Creator">Content Creator</option>
+          <option value="Media Personality">Media Personality</option>
+          <option value="Event Coverage">Event Coverage</option>
+          <option value="Influencer">Influencer</option>
+          <option value="Youth Digital Voice">Youth Digital Voice</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <textarea name="message" placeholder="Short message - tell us about yourself and your work..." data-i18n-placeholder="f_message"></textarea>
+      <button type="submit" class="btn btn-blue" style="width:100%;justify-content:center" data-i18n="f_submit">Apply to Join ABA</button>
+    </form>
+  </div>
+</section>
+
+<!-- SECTION 7: PARTNERSHIP -->
+<section id="partner" style="background:var(--white)">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-tag" data-i18n="part_tag">Partnerships</div>
+    <h2 class="section-title" data-i18n="part_title">Partner or Collaborate with ABA</h2>
+    <p class="section-sub" style="margin:0 auto" data-i18n="part_sub">Brands, organizers, institutions, and media companies - collaborate with Haiti's largest network of digital creators.</p>
+    <div class="partner-box">
+      <p style="font-size:.92rem;line-height:1.7;color:var(--text);margin-bottom:20px" data-i18n="part_desc">Whether you need event coverage, brand ambassadors, sponsored content, or community outreach - ABA connects you with verified Haitian creators who deliver real impact. Reach us to discuss collaboration opportunities.</p>
+      <a href="mailto:hello@haitibiznis.com?subject=ABA Partnership Inquiry" class="btn btn-gold" data-i18n="part_cta">Contact for Partnership</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FOOTER CTA -->
+<section style="padding:0 20px 40px">
+  <div class="cta-section">
+    <h2 data-i18n="cta_title">Join the Movement</h2>
+    <p data-i18n="cta_desc">Join the movement of Haitian bloggers and digital creators shaping visibility, culture, and opportunity.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#apply" class="btn btn-white" data-i18n="cta_join">Join ABA</a>
+      <a href="#partner" class="btn btn-ghost" data-i18n="cta_contact">Contact ABA</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>ABA</h4>
+      <p style="color:#888;line-height:1.6;font-size:.78rem" data-i18n="footer_desc">Asosyasyon Blogè Ayisyen - The official network of Haitian bloggers and digital creators.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_ecosystem">Ecosystem</h4>
+      <a href="https://haitibiznis.com" target="_blank">HaitiBiznis</a>
+      <a href="https://talent4peace.com">Talent4Peace</a>
+      <a href="https://myplopplop.com" target="_blank">MyPlopPlop</a>
+      <a href="https://myplopplop.com/rides.html" target="_blank">MsouWout</a>
+      <a href="https://boxetoboxe.com" target="_blank">BoxeToBoxe</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_links">Quick Links</h4>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#benefits" data-i18n="nav_benefits">Benefits</a>
+      <a href="#apply" data-i18n="nav_apply">Join ABA</a>
+      <a href="#partner" data-i18n="nav_partner">Partnership</a>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 ABA - Asosyasyon Blogè Ayisyen. A <a href="https://talent4peace.com">Talent4Peace</a> / <a href="https://haitibiznis.com">HaitiBiznis</a> Network.</div>
+</footer>
+
+<!-- ECOSYSTEM BAR -->
+<div class="eco-bar">
+  <span data-i18n="eco_part">Part of</span>
+  <a href="https://haitibiznis.com">HaitiBiznis</a>
+  <a href="https://talent4peace.com">Talent4Peace</a>
+  <a href="https://myplopplop.com">MyPlopPlop</a>
+  <a href="https://myplopplop.com/rides.html">MsouWout</a>
+  <a href="https://boxetoboxe.com">BoxeToBoxe</a>
+</div>
+
+<script>
+const T = {
+  fr: {
+    nav_about:'A propos',nav_who:'Qui peut rejoindre',nav_benefits:'Avantages',nav_powers:'ABA en action',nav_apply:'Rejoindre ABA',nav_partner:'Partenariat',
+    hero_title:'La Voix des <span class="gold">Blogueurs</span><br>et Createurs Numeriques Haitiens',
+    hero_sub:'Un reseau national aidant les blogueurs, voix mediatiques et createurs numeriques a gagner en visibilite, opportunites, structure et impact a travers l\'ecosysteme HaitiBiznis.',
+    hero_join:'Rejoindre ABA',hero_partner:'Devenir Partenaire',
+    about_tag:'A Propos d\'ABA',about_title:'Asosyasyon Blogè Ayisyen',
+    about_p1:'<strong>ABA (Asosyasyon Blogè Ayisyen)</strong> est le reseau officiel des blogueurs, createurs de contenu et voix mediatiques numeriques haitiens operant au sein de l\'ecosysteme <strong>Talent4Peace</strong>. Fonde pour unir, autonomiser et amplifier les conteurs numeriques d\'Haiti, ABA offre structure, visibilite et opportunites reelles aux createurs qui faconnent le recit d\'Haiti.',
+    about_p2:'Que vous soyez blogueur couvrant l\'actualite locale, YouTubeur mettant en valeur la culture haitienne, influenceur stimulant l\'engagement communautaire ou equipe media couvrant des evenements - ABA vous donne une plateforme, un reseau et une voix qui compte. En tant que membre de l\'ecosysteme <strong>HaitiBiznis</strong>, les membres ABA accedent a l\'ensemble des outils, audiences et partenariats sur toutes les plateformes connectees.',
+    who_tag:'Qui Peut Rejoindre',who_title:'Un Reseau Pour Chaque Voix Numerique',who_sub:'ABA accueille toutes les formes de creation numerique et d\'expression mediatique.',
+    w1_title:'Blogueurs',w1_desc:'Ecrivains couvrant l\'actualite, la culture, le lifestyle, la politique, la tech et tout Haiti.',
+    w2_title:'Createurs de Contenu',w2_desc:'YouTubeurs, TikTokeurs, podcasteurs et producteurs video creant du contenu original.',
+    w3_title:'Personnalites Mediatiques',w3_desc:'Animateurs radio, commentateurs TV, journalistes et personnalites publiques avec une presence numerique.',
+    w4_title:'Equipes de Couverture',w4_desc:'Photographes, videographes et streamers en direct couvrant evenements et festivals.',
+    w5_title:'Influenceurs',w5_desc:'Influenceurs reseaux sociaux avec des audiences engagees promouvant marques et causes.',
+    w6_title:'Jeunes Voix Numeriques',w6_desc:'Jeunes createurs et etudiants utilisant les plateformes numeriques pour exprimer des idees.',
+    ben_tag:'Avantages Membres',ben_title:'Pourquoi Rejoindre ABA ?',ben_sub:'Des outils reels, une exposition reelle et des opportunites reelles pour les createurs haitiens.',
+    b1_title:'Plus de Visibilite',b1_desc:'Etre mis en avant dans tout l\'ecosysteme HaitiBiznis touchant des milliers d\'utilisateurs en Haiti et dans la diaspora.',
+    b2_title:'Collaborations',b2_desc:'Connectez-vous avec d\'autres createurs, marques et organisations pour des partenariats et projets communs.',
+    b3_title:'Acces Media',b3_desc:'Obtenez des pass presse, acces anticipe aux evenements et opportunites de couverture exclusive via BoxeToBoxe et plus.',
+    b4_title:'Formation',b4_desc:'Ateliers sur la creation de contenu, SEO, strategie reseaux sociaux, branding et marketing numerique.',
+    b5_title:'Monetisation',b5_desc:'Gagnez grace au contenu sponsorise, accords de marques, couverture d\'evenements et partenariats ecosysteme.',
+    b6_title:'Soutien Communautaire',b6_desc:'Rejoignez une communaute de createurs qui se soutiennent, s\'inspirent et s\'elevent mutuellement.',
+    pow_tag:'ABA en Action',pow_title:'Alimenter l\'Ecosysteme',pow_sub:'Les createurs ABA stimulent la visibilite, le contenu et l\'engagement sur chaque plateforme HaitiBiznis.',
+    pow_t4p:'Les createurs montrent leurs competences et sont reserves pour evenements, media et missions professionnelles.',
+    pow_plop:'Les blogueurs evaluent les produits, promeuvent les commerces locaux et generent du trafic marketplace.',
+    pow_sou:'Les createurs de contenu couvrent les experiences de transport et aident a etendre la portee de la plateforme mobilite.',
+    pow_48:'Les blogueurs partagent des histoires d\'entrepreneurs et promeuvent les ressources de croissance business.',
+    form_tag:'Postuler Maintenant',form_title:'Rejoindre ABA',form_sub:'Remplissez le formulaire ci-dessous pour postuler a l\'Asosyasyon Blogè Ayisyen.',
+    f_name:'Nom Complet',f_phone:'Numero de Telephone',f_email:'Adresse Email',f_social:'Reseaux Sociaux (@)',f_city:'Ville / Localisation',f_type:'Type de Createur',f_message:'Court message - parlez-nous de vous et votre travail...',f_submit:'Postuler a ABA',
+    part_tag:'Partenariats',part_title:'Devenir Partenaire ou Collaborer avec ABA',part_sub:'Marques, organisateurs, institutions et entreprises media - collaborez avec le plus grand reseau de createurs numeriques d\'Haiti.',
+    part_desc:'Que vous ayez besoin de couverture evenementielle, ambassadeurs de marque, contenu sponsorise ou sensibilisation communautaire - ABA vous connecte avec des createurs haitiens verifies qui delivrent un impact reel. Contactez-nous pour discuter des opportunites de collaboration.',
+    part_cta:'Contacter pour Partenariat',
+    cta_title:'Rejoignez le Mouvement',cta_desc:'Rejoignez le mouvement des blogueurs et createurs numeriques haitiens qui faconnent la visibilite, la culture et les opportunites.',
+    cta_join:'Rejoindre ABA',cta_contact:'Contacter ABA',
+    footer_desc:'Asosyasyon Blogè Ayisyen - Le reseau officiel des blogueurs et createurs numeriques haitiens.',
+    footer_ecosystem:'Ecosysteme',footer_links:'Liens Rapides',eco_part:'Fait partie de'
+  },
+  en: {
+    nav_about:'About',nav_who:'Who Can Join',nav_benefits:'Benefits',nav_powers:'What ABA Powers',nav_apply:'Join ABA',nav_partner:'Partnership',
+    hero_title:'The Voice of Haitian <span class="gold">Bloggers</span><br>and Digital Creators',
+    hero_sub:'A national network helping bloggers, media voices, and digital creators gain visibility, opportunities, structure, and impact through the HaitiBiznis ecosystem.',
+    hero_join:'Join ABA',hero_partner:'Partner With ABA',
+    about_tag:'About ABA',about_title:'Asosyasyon Blogè Ayisyen',
+    about_p1:'<strong>ABA (Asosyasyon Blogè Ayisyen)</strong> is the official network of Haitian bloggers, content creators, and digital media voices operating inside the <strong>Talent4Peace</strong> ecosystem. Founded to unite, empower, and amplify Haiti\'s digital storytellers, ABA provides structure, visibility, and real opportunities to creators who are shaping the narrative of Haiti.',
+    about_p2:'Whether you are a blogger covering local news, a YouTuber showcasing Haitian culture, an influencer driving community engagement, or a media team covering events - ABA gives you a platform, a network, and a voice that matters. As part of the <strong>HaitiBiznis</strong> ecosystem, ABA members gain access to the full suite of tools, audiences, and partnerships across all connected platforms.',
+    who_tag:'Who Can Join',who_title:'A Network for Every Digital Voice',who_sub:'ABA welcomes all forms of digital creation and media expression.',
+    w1_title:'Bloggers',w1_desc:'Writers covering news, culture, lifestyle, politics, tech, and everything Haiti.',
+    w2_title:'Content Creators',w2_desc:'YouTubers, TikTokers, podcasters, and video producers creating original content.',
+    w3_title:'Media Personalities',w3_desc:'Radio hosts, TV commentators, journalists, and public figures with a digital presence.',
+    w4_title:'Event Coverage Teams',w4_desc:'Photographers, videographers, and live streamers covering events and festivals.',
+    w5_title:'Influencers',w5_desc:'Social media influencers with engaged audiences promoting brands and causes.',
+    w6_title:'Youth Digital Voices',w6_desc:'Young creators and students using digital platforms to express ideas and build skills.',
+    ben_tag:'Member Benefits',ben_title:'Why Join ABA?',ben_sub:'Real tools, real exposure, and real opportunities for Haitian creators.',
+    b1_title:'Greater Visibility',b1_desc:'Get featured across the HaitiBiznis ecosystem reaching thousands of users in Haiti and the diaspora.',
+    b2_title:'Collaborations',b2_desc:'Connect with fellow creators, brands, and organizations for partnerships and joint projects.',
+    b3_title:'Media Access',b3_desc:'Get press passes, early event access, and exclusive coverage opportunities through BoxeToBoxe and more.',
+    b4_title:'Training',b4_desc:'Workshops on content creation, SEO, social media strategy, branding, and digital marketing.',
+    b5_title:'Monetization Opportunities',b5_desc:'Earn through sponsored content, brand deals, event coverage, and ecosystem partnerships.',
+    b6_title:'Community Support',b6_desc:'Join a community of like-minded creators who support, inspire, and uplift each other.',
+    pow_tag:'What ABA Powers',pow_title:'Fueling the Ecosystem',pow_sub:'ABA creators drive visibility, content, and engagement across every HaitiBiznis platform.',
+    pow_t4p:'Creators showcase their skills and get booked for events, media, and professional gigs.',
+    pow_plop:'Bloggers review products, promote local businesses, and drive marketplace traffic.',
+    pow_sou:'Content creators cover ride experiences and help grow the mobility platform\'s reach.',
+    pow_48:'Bloggers share entrepreneur stories and promote business growth resources.',
+    form_tag:'Apply Now',form_title:'Join ABA',form_sub:'Fill out the form below to apply for membership in the Asosyasyon Blogè Ayisyen.',
+    f_name:'Full Name',f_phone:'Phone Number',f_email:'Email Address',f_social:'Social Media Handle (@)',f_city:'City / Location',f_type:'Type of Creator',f_message:'Short message - tell us about yourself and your work...',f_submit:'Apply to Join ABA',
+    part_tag:'Partnerships',part_title:'Partner or Collaborate with ABA',part_sub:'Brands, organizers, institutions, and media companies - collaborate with Haiti\'s largest network of digital creators.',
+    part_desc:'Whether you need event coverage, brand ambassadors, sponsored content, or community outreach - ABA connects you with verified Haitian creators who deliver real impact. Reach us to discuss collaboration opportunities.',
+    part_cta:'Contact for Partnership',
+    cta_title:'Join the Movement',cta_desc:'Join the movement of Haitian bloggers and digital creators shaping visibility, culture, and opportunity.',
+    cta_join:'Join ABA',cta_contact:'Contact ABA',
+    footer_desc:'Asosyasyon Blogè Ayisyen - The official network of Haitian bloggers and digital creators.',
+    footer_ecosystem:'Ecosystem',footer_links:'Quick Links',eco_part:'Part of'
+  },
+  ht: {
+    nav_about:'Sou Nou',nav_who:'Ki moun ki ka rejwenn',nav_benefits:'Avantaj',nav_powers:'Sa ABA Alimante',nav_apply:'Rejwenn ABA',nav_partner:'Patenarya',
+    hero_title:'Vwa <span class="gold">Blogè</span><br>ak Kreyatè Nimerik Ayisyen yo',
+    hero_sub:'Yon rezo nasyonal ki ede blogè, vwa medya, ak kreyatè nimerik jwenn vizibilite, opòtinite, estrikti, ak enpak atravè ekosistèm HaitiBiznis la.',
+    hero_join:'Rejwenn ABA',hero_partner:'Vin Patnè ABA',
+    about_tag:'Sou ABA',about_title:'Asosyasyon Blogè Ayisyen',
+    about_p1:'<strong>ABA (Asosyasyon Blogè Ayisyen)</strong> se rezo ofisyèl blogè ayisyen, kreyatè kontni, ak vwa medya nimerik ki opere anndan ekosistèm <strong>Talent4Peace</strong> la. Fondasyon li se pou ini, ranfòse, ak anplifye moun k ap rakonte istwa dijital Ayiti, ABA bay estrikti, vizibilite, ak opòtinite reyèl pou kreyatè ki ap fòme naratif Ayiti.',
+    about_p2:'Kit ou se yon blogè k ap kouvri nouvèl lokal, yon YouTubeur k ap montre kilti ayisyen, yon enfliyansè k ap pouse angajman kominote, oswa yon ekip medya k ap kouvri evènman - ABA ba ou yon platfòm, yon rezo, ak yon vwa ki konte. Kòm pati nan ekosistèm <strong>HaitiBiznis</strong> la, manm ABA jwenn aksè nan tout zouti, odyans, ak patenarya sou tout platfòm konekte yo.',
+    who_tag:'Ki Moun Ki Ka Rejwenn',who_title:'Yon Rezo Pou Chak Vwa Nimerik',who_sub:'ABA akeyi tout fòm kreyasyon nimerik ak ekspresyon medya.',
+    w1_title:'Blogè',w1_desc:'Ekriven ki kouvri nouvèl, kilti, estil lavi, politik, teknoloji, ak tout sa ki Ayiti.',
+    w2_title:'Kreyatè Kontni',w2_desc:'YouTubè, TikTokè, podkastè, ak pwodiktè videyo ki kreye kontni orijinal.',
+    w3_title:'Pèsonalite Medya',w3_desc:'Animatè radyo, komantatè TV, jounalis, ak pèsonalite piblik ki gen prezans nimerik.',
+    w4_title:'Ekip Kouvèti Evènman',w4_desc:'Fotograf, videograf, ak moun ki fè live k ap kouvri evènman ak festival.',
+    w5_title:'Enfliyansè',w5_desc:'Enfliyansè rezo sosyal ak odyans angaje ki pwomote mak ak koz.',
+    w6_title:'Jèn Vwa Nimerik',w6_desc:'Jèn kreyatè ak etidyan ki sèvi ak platfòm nimerik pou eksprime lide ak bati konpetans.',
+    ben_tag:'Avantaj Manm',ben_title:'Poukisa Rejwenn ABA?',ben_sub:'Zouti reyèl, ekspozisyon reyèl, ak opòtinite reyèl pou kreyatè ayisyen.',
+    b1_title:'Plis Vizibilite',b1_desc:'Parèt nan tout ekosistèm HaitiBiznis la ki rive jwenn dè milye itilizatè an Ayiti ak nan dyaspora a.',
+    b2_title:'Kolaborasyon',b2_desc:'Konekte ak lòt kreyatè, mak, ak òganizasyon pou patenarya ak pwojè ansanm.',
+    b3_title:'Aksè Medya',b3_desc:'Jwenn pas laprès, aksè bonè nan evènman, ak opòtinite kouvèti eksklizif atravè BoxeToBoxe ak plis.',
+    b4_title:'Fòmasyon',b4_desc:'Atelye sou kreyasyon kontni, SEO, estrateji rezo sosyal, branding, ak maketing nimerik.',
+    b5_title:'Opòtinite Monetizasyon',b5_desc:'Touche lajan atravè kontni sponsorize, akò mak, kouvèti evènman, ak patenarya ekosistèm.',
+    b6_title:'Sipò Kominote',b6_desc:'Rejwenn yon kominote kreyatè ki sipòte, enspire, ak leve youn lòt.',
+    pow_tag:'Sa ABA Alimante',pow_title:'Bay Ekosistèm nan Enèji',pow_sub:'Kreyatè ABA kondui vizibilite, kontni, ak angajman sou chak platfòm HaitiBiznis.',
+    pow_t4p:'Kreyatè montre konpetans yo epi jwenn rezèvasyon pou evènman, medya, ak misyon pwofesyonèl.',
+    pow_plop:'Blogè evalye pwodui, pwomote biznis lokal, ak jenere trafik marketplace.',
+    pow_sou:'Kreyatè kontni kouvri eksperyans transpò ak ede grandi portee platfòm mobilite a.',
+    pow_48:'Blogè pataje istwa antreprenè epi pwomote resous kwasans biznis.',
+    form_tag:'Aplike Kounye a',form_title:'Rejwenn ABA',form_sub:'Ranpli fòm anba a pou aplike pou manm nan Asosyasyon Blogè Ayisyen.',
+    f_name:'Non Konplè',f_phone:'Nimewo Telefòn',f_email:'Adrès Imel',f_social:'Rezo Sosyal (@)',f_city:'Vil / Kote Ou Ye',f_type:'Tip Kreyatè',f_message:'Ti mesaj - di nou sou ou menm ak travay ou...',f_submit:'Aplike pou Rejwenn ABA',
+    part_tag:'Patenarya',part_title:'Vin Patnè oswa Kolabore ak ABA',part_sub:'Mak, òganizatè, enstitisyon, ak konpayi medya - kolabore ak pi gwo rezo kreyatè nimerik Ayiti a.',
+    part_desc:'Kit ou bezwen kouvèti evènman, anbasadè mak, kontni sponsorize, oswa sansibilizasyon kominote - ABA konekte ou ak kreyatè ayisyen verifye ki delivre enpak reyèl. Kontakte nou pou diskite opòtinite kolaborasyon.',
+    part_cta:'Kontakte pou Patenarya',
+    cta_title:'Rejwenn Mouvman an',cta_desc:'Rejwenn mouvman blogè ak kreyatè nimerik ayisyen k ap fòme vizibilite, kilti, ak opòtinite.',
+    cta_join:'Rejwenn ABA',cta_contact:'Kontakte ABA',
+    footer_desc:'Asosyasyon Blogè Ayisyen - Rezo ofisyèl blogè ak kreyatè nimerik ayisyen.',
+    footer_ecosystem:'Ekosistèm',footer_links:'Lyen Rapid',eco_part:'Fè pati de'
+  },
+  es: {
+    nav_about:'Acerca de',nav_who:'Quien puede unirse',nav_benefits:'Beneficios',nav_powers:'Que impulsa ABA',nav_apply:'Unirse a ABA',nav_partner:'Asociacion',
+    hero_title:'La Voz de los <span class="gold">Bloggers</span><br>y Creadores Digitales Haitianos',
+    hero_sub:'Una red nacional ayudando a bloggers, voces mediaticas y creadores digitales a ganar visibilidad, oportunidades, estructura e impacto a traves del ecosistema HaitiBiznis.',
+    hero_join:'Unirse a ABA',hero_partner:'Ser Socio de ABA',
+    about_tag:'Sobre ABA',about_title:'Asosyasyon Blogè Ayisyen',
+    about_p1:'<strong>ABA (Asosyasyon Blogè Ayisyen)</strong> es la red oficial de bloggers, creadores de contenido y voces de medios digitales haitianos operando dentro del ecosistema <strong>Talent4Peace</strong>. Fundada para unir, empoderar y amplificar a los narradores digitales de Haiti, ABA proporciona estructura, visibilidad y oportunidades reales a los creadores que estan dando forma a la narrativa de Haiti.',
+    about_p2:'Ya seas un blogger cubriendo noticias locales, un YouTuber mostrando la cultura haitiana, un influencer impulsando el compromiso comunitario, o un equipo de medios cubriendo eventos - ABA te da una plataforma, una red y una voz que importa. Como parte del ecosistema <strong>HaitiBiznis</strong>, los miembros de ABA obtienen acceso al conjunto completo de herramientas, audiencias y asociaciones en todas las plataformas conectadas.',
+    who_tag:'Quien Puede Unirse',who_title:'Una Red Para Cada Voz Digital',who_sub:'ABA da la bienvenida a todas las formas de creacion digital y expresion mediatica.',
+    w1_title:'Bloggers',w1_desc:'Escritores cubriendo noticias, cultura, estilo de vida, politica, tecnologia y todo sobre Haiti.',
+    w2_title:'Creadores de Contenido',w2_desc:'YouTubers, TikTokers, podcasters y productores de video creando contenido original.',
+    w3_title:'Personalidades Mediaticas',w3_desc:'Presentadores de radio, comentaristas de TV, periodistas y figuras publicas con presencia digital.',
+    w4_title:'Equipos de Cobertura',w4_desc:'Fotografos, videografos y streamers en vivo cubriendo eventos y festivales.',
+    w5_title:'Influencers',w5_desc:'Influencers de redes sociales con audiencias comprometidas promoviendo marcas y causas.',
+    w6_title:'Jovenes Voces Digitales',w6_desc:'Jovenes creadores y estudiantes usando plataformas digitales para expresar ideas y desarrollar habilidades.',
+    ben_tag:'Beneficios de Miembro',ben_title:'Por Que Unirse a ABA?',ben_sub:'Herramientas reales, exposicion real y oportunidades reales para creadores haitianos.',
+    b1_title:'Mayor Visibilidad',b1_desc:'Aparecer en todo el ecosistema HaitiBiznis alcanzando miles de usuarios en Haiti y la diaspora.',
+    b2_title:'Colaboraciones',b2_desc:'Conecta con otros creadores, marcas y organizaciones para asociaciones y proyectos conjuntos.',
+    b3_title:'Acceso a Medios',b3_desc:'Obtener pases de prensa, acceso anticipado a eventos y oportunidades de cobertura exclusiva via BoxeToBoxe y mas.',
+    b4_title:'Capacitacion',b4_desc:'Talleres sobre creacion de contenido, SEO, estrategia de redes sociales, branding y marketing digital.',
+    b5_title:'Oportunidades de Monetizacion',b5_desc:'Ganar a traves de contenido patrocinado, acuerdos de marca, cobertura de eventos y asociaciones del ecosistema.',
+    b6_title:'Apoyo Comunitario',b6_desc:'Unete a una comunidad de creadores que se apoyan, inspiran y elevan mutuamente.',
+    pow_tag:'Que Impulsa ABA',pow_title:'Alimentando el Ecosistema',pow_sub:'Los creadores de ABA impulsan la visibilidad, el contenido y el compromiso en cada plataforma HaitiBiznis.',
+    pow_t4p:'Los creadores muestran sus habilidades y son reservados para eventos, medios y trabajos profesionales.',
+    pow_plop:'Los bloggers evaluan productos, promueven negocios locales y generan trafico en el marketplace.',
+    pow_sou:'Los creadores de contenido cubren experiencias de transporte y ayudan a crecer el alcance de la plataforma de movilidad.',
+    pow_48:'Los bloggers comparten historias de emprendedores y promueven recursos de crecimiento empresarial.',
+    form_tag:'Aplicar Ahora',form_title:'Unirse a ABA',form_sub:'Completa el formulario para solicitar membresia en la Asosyasyon Blogè Ayisyen.',
+    f_name:'Nombre Completo',f_phone:'Numero de Telefono',f_email:'Correo Electronico',f_social:'Redes Sociales (@)',f_city:'Ciudad / Ubicacion',f_type:'Tipo de Creador',f_message:'Mensaje corto - cuentanos sobre ti y tu trabajo...',f_submit:'Solicitar Unirse a ABA',
+    part_tag:'Asociaciones',part_title:'Asociarse o Colaborar con ABA',part_sub:'Marcas, organizadores, instituciones y empresas de medios - colaboren con la red de creadores digitales mas grande de Haiti.',
+    part_desc:'Ya sea que necesites cobertura de eventos, embajadores de marca, contenido patrocinado o alcance comunitario - ABA te conecta con creadores haitianos verificados que entregan impacto real. Contactanos para discutir oportunidades de colaboracion.',
+    part_cta:'Contactar para Asociacion',
+    cta_title:'Unete al Movimiento',cta_desc:'Unete al movimiento de bloggers y creadores digitales haitianos que dan forma a la visibilidad, la cultura y las oportunidades.',
+    cta_join:'Unirse a ABA',cta_contact:'Contactar ABA',
+    footer_desc:'Asosyasyon Blogè Ayisyen - La red oficial de bloggers y creadores digitales haitianos.',
+    footer_ecosystem:'Ecosistema',footer_links:'Enlaces Rapidos',eco_part:'Parte de'
+  }
+};
+
+let currentLang = 'fr';
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.top-lang-bar a').forEach(a => a.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  const t = T[lang] || T.fr;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.placeholder = t[key];
+  });
+}
+function closeMobile() { document.getElementById('mobileNav').classList.remove('open'); }
+setLang('fr');
+</script>
+</body>
+</html>
