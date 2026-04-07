@@ -255,6 +255,13 @@ footer{padding:40px 20px 24px;background:var(--dark);color:#fff}
 .reveal{opacity:0;transform:translateY(20px);transition:all .5s cubic-bezier(.4,0,.2,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+
+.install-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:linear-gradient(135deg,#00209F 0%,#D21034 100%);color:#fff;padding:14px 20px;box-shadow:0 -4px 20px rgba(0,0,0,.15);align-items:center;gap:12px}
+.install-banner.show{display:flex}
+.install-banner-text{flex:1;font-size:.82rem;font-weight:600}
+.install-banner-text small{display:block;font-size:.7rem;font-weight:400;opacity:.8;margin-top:2px}
+.install-banner-btn{background:#fff;color:#00209F;border:none;padding:10px 22px;border-radius:100px;font-weight:700;font-size:.82rem;cursor:pointer;white-space:nowrap}
+.install-banner-close{background:none;border:none;color:rgba(255,255,255,.7);font-size:1.2rem;cursor:pointer;padding:4px}
 </style>
 </head>
 <body>
@@ -527,7 +534,9 @@ const translations={
     why_desc:'Talent4Peace verifies professionals to ensure safety, quality, and trust.',
     join_title:'Turn Your Skill<br>Into Opportunity',
     join_desc:'Join Talent4Peace as a verified professional and connect with clients who need your skills across Haiti.',
-    join_btn:'Join Talent4Peace',join_back:'Back to HaitiBiznis'
+    join_btn:'Join Talent4Peace',join_back:'Back to HaitiBiznis',
+    install_text:'Install Talent4Peace<small>Add to your home screen for quick access</small>',
+    install_btn:'Install'
   },
   fr:{
     hero_title:'Trouvez des Talents. <span class="gold">R\u00e9servez.</span><br>Cr\u00e9ez des <span class="blue">Opportunit\u00e9s.</span>',
@@ -543,7 +552,9 @@ const translations={
     why_desc:'Talent4Peace v\u00e9rifie les professionnels pour assurer la s\u00e9curit\u00e9, la qualit\u00e9 et la confiance.',
     join_title:'Transformez Votre Comp\u00e9tence<br>en Opportunit\u00e9',
     join_desc:'Rejoignez Talent4Peace en tant que professionnel v\u00e9rifi\u00e9 et connectez-vous avec des clients qui ont besoin de vos comp\u00e9tences.',
-    join_btn:'Rejoindre Talent4Peace',join_back:'Retour \u00e0 HaitiBiznis'
+    join_btn:'Rejoindre Talent4Peace',join_back:'Retour \u00e0 HaitiBiznis',
+    install_text:'Installer Talent4Peace<small>Ajouter \u00e0 votre \u00e9cran d\'accueil</small>',
+    install_btn:'Installer'
   },
   ht:{
     hero_title:'Jwenn Talan. <span class="gold">Rezève Konpetans.</span><br>Kreye <span class="blue">Op\u00f2tinite.</span>',
@@ -559,7 +570,9 @@ const translations={
     why_desc:'Talent4Peace verifye pwofesyon\u00e8l yo pou asire sekirite, kalite ak konfyans.',
     join_title:'Transfome Konpetans Ou<br>an Op\u00f2tinite',
     join_desc:'Rejwenn Talent4Peace k\u00f2m yon pwofesyon\u00e8l verifye epi konekte ak kliyan ki bezwen konpetans ou nan tout Ayiti.',
-    join_btn:'Rejwenn Talent4Peace',join_back:'Retounen nan HaitiBiznis'
+    join_btn:'Rejwenn Talent4Peace',join_back:'Retounen nan HaitiBiznis',
+    install_text:'Enstale Talent4Peace<small>Mete sou ekran lakay ou</small>',
+    install_btn:'Enstale'
   },
   es:{
     hero_title:'Encuentra Talento. <span class="gold">Reserva Habilidades.</span><br>Crea <span class="blue">Oportunidad.</span>',
@@ -575,7 +588,9 @@ const translations={
     why_desc:'Talent4Peace verifica a los profesionales para garantizar seguridad, calidad y confianza.',
     join_title:'Convierte Tu Habilidad<br>en Oportunidad',
     join_desc:'\u00danete a Talent4Peace como profesional verificado y con\u00e9ctate con clientes que necesitan tus habilidades en todo Hait\u00ed.',
-    join_btn:'Unirse a Talent4Peace',join_back:'Volver a HaitiBiznis'
+    join_btn:'Unirse a Talent4Peace',join_back:'Volver a HaitiBiznis',
+    install_text:'Instalar Talent4Peace<small>A\u00f1adir a tu pantalla de inicio</small>',
+    install_btn:'Instalar'
   }
 };
 let currentLang='en';
@@ -591,6 +606,37 @@ function setLang(lang){
 }
 const savedLang=localStorage.getItem('t4p_lang');
 if(savedLang)setLang(savedLang); else setLang('fr');
+</script>
+
+<div class="install-banner" id="installBanner">
+  <div class="install-banner-text" data-i18n="install_text">Installer Talent4Peace<small>Ajouter à votre écran d'accueil</small></div>
+  <button class="install-banner-btn" id="installBtn" data-i18n="install_btn">Installer</button>
+  <button class="install-banner-close" id="installClose">&times;</button>
+</div>
+
+<script>
+var deferredPrompt=null;
+var iBanner=document.getElementById('installBanner');
+var iBtn=document.getElementById('installBtn');
+var iClose=document.getElementById('installClose');
+window.addEventListener('beforeinstallprompt',function(e){
+  e.preventDefault();deferredPrompt=e;iBanner.classList.add('show');
+});
+iBtn.addEventListener('click',function(){
+  if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(function(){iBanner.classList.remove('show');deferredPrompt=null})}
+});
+iClose.addEventListener('click',function(){iBanner.classList.remove('show');sessionStorage.setItem('t4p_install_dismissed','1')});
+setTimeout(function(){
+  if(!deferredPrompt&&!sessionStorage.getItem('t4p_install_dismissed')&&!window.matchMedia('(display-mode: standalone)').matches){
+    iBanner.classList.add('show');
+    iBtn.addEventListener('click',function(){
+      var isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+      if(isIOS){alert('Tap the Share button, then "Add to Home Screen"')}
+      else{alert('Tap the menu (\u22ee), then "Install app"')}
+      iBanner.classList.remove('show');
+    },{once:true});
+  }
+},3000);
 </script>
 </body>
 </html>
